@@ -3,7 +3,6 @@ package org.example;
 import static org.example.RpnApp.evaluate;
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
@@ -54,5 +53,29 @@ class RpnAppTest {
     @DisplayName("Expression complexe : 3 5 8 * 7 + * = 141")
     void testComplexDojoExample() {
         assertEquals(141, evaluate("3 5 8 * 7 + *"));
+    }
+
+    @Test
+    @DisplayName("Division non supportée : 20 5 / = 4")
+    void testDivision() {
+        assertThrows(UnsupportedOperationException.class, () -> evaluate("20 5 /"));
+    }
+
+    @Test
+    @DisplayName("Racine carrée non supportée : 9 SQRT")
+    void testSqrtNotSupported() {
+        assertThrows(UnsupportedOperationException.class, () -> evaluate("9 SQRT"));
+    }
+
+    @Test
+    @DisplayName("MAX non supporté : 2 3 MAX")
+    void testMaxNotSupported() {
+        assertThrows(UnsupportedOperationException.class, () -> evaluate("2 3 MAX"));
+    }
+
+    @Test
+    @DisplayName("Format de nombre invalide : 2 a +")
+    void testInvalidNumberFormat() {
+        assertThrows(NumberFormatException.class, () -> evaluate("2 a +"));
     }
 }

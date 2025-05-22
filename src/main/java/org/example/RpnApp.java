@@ -27,6 +27,10 @@ public class RpnApp {
                 case "*":
                     stack.push(stack.pop() * stack.pop());
                     break;
+                case "SQRT" :
+                case "MAX":
+                case "/":
+                    throw new UnsupportedOperationException(token);
                 default:
                     stack.push(Integer.parseInt(token));
             }
