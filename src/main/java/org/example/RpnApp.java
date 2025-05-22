@@ -14,6 +14,15 @@ public class RpnApp {
         //On divise l'expression avec une regex sur les espaces
         Stack<Integer> stack = new Stack<>();
         String[] tokens = expression.split(" ");
-        return 0;
+        for (String token : tokens) {
+            switch (token) {
+                case "+":
+                    stack.push(stack.pop() + stack.pop());
+                    break;
+                default:
+                    stack.push(Integer.parseInt(token));
+            }
+        }
+        return stack.pop();
     }
 }
