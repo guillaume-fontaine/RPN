@@ -8,7 +8,7 @@ public class RpnApp {
 
     }
 
-    public int evaluate(String expression) {
+    public static int evaluate(String expression) {
         return 0;
     }
 }
