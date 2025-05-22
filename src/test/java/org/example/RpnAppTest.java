@@ -16,7 +16,6 @@ class RpnAppTest {
 
     @Test
     @DisplayName("Soustraction simple : 3 2 - = 1")
-    @Disabled
     void testSubtraction() {
         assertEquals(1, evaluate("3 2 -"));
     }
@@ -51,7 +50,6 @@ class RpnAppTest {
 
     @Test
     @DisplayName("Addition et soustraction : 4 2 + 3 - = 3")
-    @Disabled
     void testAdditionAndSubtraction() {
         assertEquals(3, evaluate("4 2 + 3 -"));
     }
