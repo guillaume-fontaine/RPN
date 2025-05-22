@@ -24,6 +24,9 @@ public class RpnApp {
                     int a = stack.pop();
                     stack.push(a - b);
                     break;
+                case "*":
+                    stack.push(stack.pop() * stack.pop());
+                    break;
                 default:
                     stack.push(Integer.parseInt(token));
             }
