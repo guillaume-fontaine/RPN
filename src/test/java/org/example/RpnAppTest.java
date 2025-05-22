@@ -14,4 +14,9 @@ class RpnAppTest {
     void testSubtraction() {
         assertEquals(1, evaluate("3 2 -"));
     }
+
+    @Test
+    void testMultiplication() {
+        assertEquals(6, evaluate("2 3 *"));
+    }
 }
