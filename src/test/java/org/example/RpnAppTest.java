@@ -41,4 +41,16 @@ class RpnAppTest {
     void testComplexExpression() {
         assertEquals(20, evaluate("5 1 2 + 4 * + 3 +"));
     }
+
+    @Test
+    @DisplayName("Addition et soustraction : 4 2 + 3 - = 3")
+    void testAdditionAndSubtraction() {
+        assertEquals(3, evaluate("4 2 + 3 -"));
+    }
+
+    @Test
+    @DisplayName("Expression complexe : 3 5 8 * 7 + * = 141")
+    void testComplexDojoExample() {
+        assertEquals(141, evaluate("3 5 8 * 7 + *"));
+    }
 }
